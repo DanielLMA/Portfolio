@@ -1,4 +1,239 @@
 body {
-  font-size: 2rem;
+  font-size: 3rem;
+  background-color: #20201f;
+}
+
+body header nav {
+  border: 4px solid black;
+  font-size: 1.25rem;
+  background-color: #10426c;
+  font-family: "Montserrat", sans-serif;
+  position: fixed;
+  z-index: 100000000;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: 50px;
+  -ms-grid-columns: 50vw 50vw;
+      grid-template: 50px / 50vw 50vw;
+}
+
+body header nav #left_link {
+  -ms-grid-column-align: start;
+      justify-self: start;
+  padding: 10px;
+  margin-left: 40px;
+  color: black;
+  text-decoration: none;
+}
+
+body header nav #left_link:hover {
+  background-color: black;
+  color: gray;
+}
+
+body header nav #right_links {
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-right: 50px;
+}
+
+body header nav #right_links .link {
+  text-decoration: none;
+  padding: 10px;
+  color: black;
+}
+
+body header nav #right_links .link:hover {
+  background-color: black;
+  color: gray;
+}
+
+body .container #background_image {
+  filter: blur(1.5px);
+  -webkit-filter: blur(1.5px);
+  width: 95%;
+}
+
+body .container section {
+  position: absolute;
+  z-index: 10;
+  top: 80%;
+  /* Adjust this value to move the positioned div up and down */
+  left: 60%;
+  width: 100%;
+  /* Set the width of the positioned div */
+}
+
+body .container section .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr;
+  -ms-grid-columns: 125px 125px 125px 125px;
+      grid-template: 1fr 1fr / 125px 125px 125px 125px;
+}
+
+body .container section .grid #one {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  z-index: 1000000000000;
+}
+
+body .container section .grid #one:hover {
+  height: 600px;
+  margin-top: -300px;
+  color: transparent;
+}
+
+body .container section .grid #two {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  z-index: 1000000000000;
+}
+
+body .container section .grid #two:hover {
+  height: 600px;
+  margin-top: -300px;
+  color: transparent;
+}
+
+body .container section .grid #three {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  z-index: 1000000000000;
+}
+
+body .container section .grid #three:hover {
+  height: 600px;
+  margin-top: -300px;
+  color: transparent;
+}
+
+body .container section .grid #four {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  z-index: 10000000;
+}
+
+body .container section .grid #four:hover {
+  height: 100px;
+  margin-top: -100px;
+  color: transparent;
+}
+
+body .container section .grid #five {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1 / 2;
+  z-index: 1000;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: red;
+}
+
+body .container section .grid #six {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  z-index: 1000;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: red;
+}
+
+body .container section .grid #seven {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3 / 4;
+  z-index: 1000;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: red;
+}
+
+body .container section .grid #eight {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -ms-grid-column: 4;
+  -ms-grid-column-span: 1;
+  grid-column: 4 / 5;
+  z-index: 1000;
+  background: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: red;
+}
+
+body .container section .grid div {
+  width: 125px;
+  height: 300px;
+  background: transparent;
+  -webkit-transition: margin-top 2s, height 2s;
+  transition: margin-top 2s, height 2s;
+}
+
+body .container section .grid div img {
+  max-height: 300px;
+  width: 125px;
+  background-color: transparent;
 }
 /*# sourceMappingURL=style.css.map */

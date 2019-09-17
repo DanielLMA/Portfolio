@@ -1,11 +1,10 @@
-OUTLINE
+##Portfolio - Daniel Ade
 
+<!--! 1. url to site -->
 
-1. url to site
+2. Github link: https://github.com/DanielLMA/Portfolio
 
-2. link to github
-
-3. 
+<!--! 3. Add these -->
 
 PURPOSE
 
