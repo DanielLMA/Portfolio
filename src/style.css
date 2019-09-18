@@ -1,12 +1,11 @@
 body {
   font-size: 3rem;
-  background-color: #20201f;
 }
 
 body header nav {
   border: 4px solid black;
   font-size: 1.25rem;
-  background-color: #10426c;
+  background-color: #714729;
   font-family: "Montserrat", sans-serif;
   position: fixed;
   z-index: 100000000;
@@ -52,22 +51,24 @@ body header nav #right_links .link:hover {
 }
 
 body .container #background_image {
-  filter: blur(1.5px);
-  -webkit-filter: blur(1.5px);
-  width: 95%;
+  width: 100%;
+  position: fixed;
+  min-height: 800px;
+  z-index: -1;
 }
 
-body .container section {
+body .container #background_image section {
   position: absolute;
   z-index: 10;
-  top: 80%;
+  top: 55%;
   /* Adjust this value to move the positioned div up and down */
-  left: 60%;
+  margin-right: 100px;
   width: 100%;
   /* Set the width of the positioned div */
 }
 
-body .container section .grid {
+body .container #background_image section .grid {
+  position: fixed;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1fr 1fr;
@@ -75,7 +76,7 @@ body .container section .grid {
       grid-template: 1fr 1fr / 125px 125px 125px 125px;
 }
 
-body .container section .grid #one {
+body .container #background_image section .grid #one {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -85,13 +86,13 @@ body .container section .grid #one {
   z-index: 1000000000000;
 }
 
-body .container section .grid #one:hover {
+body .container #background_image section .grid #one:hover {
   height: 600px;
   margin-top: -300px;
   color: transparent;
 }
 
-body .container section .grid #two {
+body .container #background_image section .grid #two {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -101,13 +102,13 @@ body .container section .grid #two {
   z-index: 1000000000000;
 }
 
-body .container section .grid #two:hover {
+body .container #background_image section .grid #two:hover {
   height: 600px;
   margin-top: -300px;
   color: transparent;
 }
 
-body .container section .grid #three {
+body .container #background_image section .grid #three {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -117,13 +118,13 @@ body .container section .grid #three {
   z-index: 1000000000000;
 }
 
-body .container section .grid #three:hover {
+body .container #background_image section .grid #three:hover {
   height: 600px;
   margin-top: -300px;
   color: transparent;
 }
 
-body .container section .grid #four {
+body .container #background_image section .grid #four {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -133,13 +134,13 @@ body .container section .grid #four {
   z-index: 10000000;
 }
 
-body .container section .grid #four:hover {
-  height: 100px;
-  margin-top: -100px;
+body .container #background_image section .grid #four:hover {
+  height: 600px;
+  margin-top: -300px;
   color: transparent;
 }
 
-body .container section .grid #five {
+body .container #background_image section .grid #five {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -147,7 +148,7 @@ body .container section .grid #five {
   -ms-grid-column-span: 1;
   grid-column: 1 / 2;
   z-index: 1000;
-  background: black;
+  background: #A6B5BF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,10 +158,10 @@ body .container section .grid #five {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: red;
+  color: saddlebrown;
 }
 
-body .container section .grid #six {
+body .container #background_image section .grid #six {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -168,7 +169,7 @@ body .container section .grid #six {
   -ms-grid-column-span: 1;
   grid-column: 2 / 3;
   z-index: 1000;
-  background: black;
+  background: #A6B5BF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,10 +179,10 @@ body .container section .grid #six {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: red;
+  color: saddlebrown;
 }
 
-body .container section .grid #seven {
+body .container #background_image section .grid #seven {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -189,7 +190,7 @@ body .container section .grid #seven {
   -ms-grid-column-span: 1;
   grid-column: 3 / 4;
   z-index: 1000;
-  background: black;
+  background: #A6B5BF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,10 +200,10 @@ body .container section .grid #seven {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: red;
+  color: saddlebrown;
 }
 
-body .container section .grid #eight {
+body .container #background_image section .grid #eight {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   grid-row: 1 / 2;
@@ -210,7 +211,7 @@ body .container section .grid #eight {
   -ms-grid-column-span: 1;
   grid-column: 4 / 5;
   z-index: 1000;
-  background: black;
+  background: #A6B5BF;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -220,10 +221,10 @@ body .container section .grid #eight {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  color: red;
+  color: saddlebrown;
 }
 
-body .container section .grid div {
+body .container #background_image section .grid div {
   width: 125px;
   height: 300px;
   background: transparent;
@@ -231,9 +232,62 @@ body .container section .grid div {
   transition: margin-top 2s, height 2s;
 }
 
-body .container section .grid div img {
+body .container #background_image section .grid div img {
   max-height: 300px;
   width: 125px;
   background-color: transparent;
+}
+
+html {
+  overflow: hidden;
+}
+
+#body2 {
+  height: 100vh;
+  -webkit-perspective: 1px;
+          perspective: 1px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.parallax-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.regular-wrapper {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 20vh;
+  background-image: url("../docs/centralpark.jpg");
+  z-index: 2;
+  position: relative;
+}
+
+.content2 {
+  margin: 0 auto;
+  padding: 50px;
+  width: 50%;
+  background: #aaa;
+}
+
+.content2 .parallax-wrapper::before {
+  content: "";
+  -webkit-transform: translateZ(-1px) scale(2);
+          transform: translateZ(-1px) scale(2);
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-image: url("../docs/centralpark.jpg");
+  position: absolute;
+  z-index: -1;
 }
 /*# sourceMappingURL=style.css.map */
