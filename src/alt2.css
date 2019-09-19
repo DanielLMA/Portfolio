@@ -1,0 +1,328 @@
+body {
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+
+body nav {
+  color: blue;
+  position: fixed;
+}
+
+body nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body nav ul li {
+  float: left;
+  width: 200px;
+  height: 40px;
+  background-color: black;
+  opacity: 0.8;
+  line-height: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+body nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
+
+body nav ul li a:hover {
+  background-color: green;
+}
+
+body nav ul li ul li {
+  display: none;
+}
+
+body nav ul li:hover ul li {
+  display: block;
+}
+
+body .container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 100px;
+      grid-template-rows: 1fr 1fr 1fr 100px;
+}
+
+body .container #top {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1 / 1 / 2 / 3;
+  background-color: #302f2f;
+  color: red;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+body .container #top #intro-top-center #greenblock {
+  height: 200px;
+  -webkit-transition: margin-top 1s;
+  transition: margin-top 1s;
+}
+
+body .container #top #intro-top-center #greenblock:hover {
+  margin-top: 100px;
+}
+
+body .container #middle-left {
+  background: url("../src/centralpark2.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body .container #middle-right {
+  height: 100vh;
+  background-color: brown;
+}
+
+body .container #bottom-left {
+  height: 100vh;
+  background-color: gray;
+}
+
+body .container #bottom-right {
+  background: url("../src/manhattan_bridge.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body .container #bottom {
+  background-color: lightblue;
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 4 / 1 / 5 / 3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 50% minmax(auto, 125px) 1fr;
+      grid-template-columns: 50% minmax(auto, 125px) 1fr;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+}
+
+body .container #bottom img {
+  width: 50px;
+}
+
+@media only screen and (max-width: 500px) {
+  body .container {
+    height: 50vh;
+  }
+  body .container #middle-right {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 2 / 1 / 3 / 3;
+    height: 50vh;
+  }
+  body .container #bottom-left {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-area: 3 / 1 / 4 / 3;
+    height: 50vh;
+  }
+  body .container #bottom img {
+    width: 30px;
+  }
+}
+
+@media only screen and (min-width: 501px) and (max-width: 800px) {
+  body .container {
+    height: 75vh;
+  }
+  body .container #middle-right {
+    -ms-grid-row: 2;
+    -ms-grid-column: 1;
+    grid-area: 2 / 1;
+    height: 75vh;
+  }
+  body .container #bottom-left {
+    height: 75vh;
+  }
+  body .container #middle-left {
+    grid-area: span 2;
+    background: url("../src/empire-state.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  body .container #bottom
+img {
+    width: 33px;
+  }
+}
+
+.container2 {
+  background: url("../src/manhattan_bridge.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr auto auto 100px;
+      grid-template-rows: 1fr 1fr auto auto 100px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container2 #two-top {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 1 / 1 / 2 / 4;
+  background-color: blue;
+  height: 75vw;
+  max-width: 1000px;
+  min-width: 80%;
+  margin: auto auto auto auto;
+}
+
+.container2 #two-upper-middle {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+  background-color: orange;
+  height: auto;
+  margin: 50px 50px 50px 50px;
+}
+
+.container2 #two-lower-middle {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 2 / 3 / 3;
+  background-color: blue;
+  margin: 0 0 0 0;
+}
+
+.container2 #two-lower {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 3 / 3 / 4;
+  background-color: red;
+  margin: 50px 50px 50px 0px;
+}
+
+.container2 #bottom {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: 5 / 1 / 6 / 4;
+  background-color: lightcyan;
+}
+
+body {
+  background: silver;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body .container3 {
+  background: url("../src/QC_marathon.jpg");
+  background-size: cover;
+  max-width: 1000px;
+  margin: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  -ms-grid-rows: 1fr 1fr 1fr 100px;
+      grid-template-rows: 1fr 1fr 1fr 100px;
+}
+
+body .container3 #three-top {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  width: 30vw;
+  font-size: 2rem;
+  height: 125px;
+  margin: 125px 25px 50px 50px;
+  z-index: 10;
+  background: lightblue;
+}
+
+body .container3 #three-middle {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 2 / 1 / 3 / 2;
+  height: 500px;
+  background: blue;
+}
+
+body .container3 #three-bottom {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 3 / 1 / 4 / 2;
+  background: green;
+}
+
+body .container3 #bottom {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 4 / 1 / 5 / 3;
+  background-color: lightblue;
+}
+
+@media only screen and (max-width: 500px) {
+  body .container3 #three-top {
+    margin: 0;
+    width: 100vw;
+    height: auto;
+  }
+  body .container3 #three-top {
+    width: 100vw;
+  }
+  body .container3 #three-middle {
+    width: 100vw;
+  }
+  body .container3 #three-bottom {
+    width: 100vw;
+  }
+}
+/*# sourceMappingURL=alt2.css.map */
