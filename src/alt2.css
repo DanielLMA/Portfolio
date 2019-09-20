@@ -78,7 +78,7 @@ body .container #top #intro-top-center #greenblock:hover {
 }
 
 body .container #middle-left {
-  background: url("../src/centralpark2.jpg");
+  background: url("../docs/centralpark2.jpg");
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -97,7 +97,7 @@ body .container #bottom-left {
 }
 
 body .container #bottom-right {
-  background: url("../src/manhattan_bridge.jpg");
+  background: url("../docs/manhattan_bridge.jpg");
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -168,7 +168,7 @@ body .container #bottom img {
   }
   body .container #middle-left {
     grid-area: span 2;
-    background: url("../src/empire-state.jpg");
+    background: url("../docs/empire-state.jpg");
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
@@ -182,7 +182,7 @@ img {
 }
 
 .container2 {
-  background: url("../src/manhattan_bridge.jpg");
+  background: url("../docs/manhattan_bridge.jpg");
   background-size: cover;
   background-attachment: fixed;
   width: 100%;
@@ -255,7 +255,7 @@ body {
 }
 
 body .container3 {
-  background: url("../src/QC_marathon.jpg");
+  background: url("../docs/QC_marathon.jpg");
   background-size: cover;
   max-width: 1000px;
   margin: auto;
