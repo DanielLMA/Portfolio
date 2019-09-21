@@ -1,3 +1,15 @@
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 body {
   color: black;
   margin: 0;
@@ -9,8 +21,8 @@ body .container {
   display: grid;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 100px;
+      grid-template-rows: 1fr 1fr 1fr 100px;
 }
 
 body .container #top {
@@ -19,23 +31,28 @@ body .container #top {
   -ms-grid-column: 1;
   -ms-grid-column-span: 2;
   grid-area: 1 / 1 / 2 / 3;
-  background-color: #302f2f;
-  color: red;
+  background-image: url(../docs/cityrise.jpg);
+  background-color: black;
+  background-size: cover;
+  background-attachment: fixed;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -webkit-keyframes: text-flicker-in-glow;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
 }
 
-body .container #top #intro-top-center #greenblock {
-  height: 200px;
-  -webkit-transition: margin-top 1s;
-  transition: margin-top 1s;
-}
-
-body .container #top #intro-top-center #greenblock:hover {
-  margin-top: 100px;
+body .container #top #bio-top-grid {
+  background: black;
+  color: white;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  text-align: center;
+  -ms-flex-item-align: start;
+      -ms-grid-row-align: start;
+      align-self: start;
+  font-size: 10vw;
+  font-weight: bold;
+  mix-blend-mode: multiply;
 }
 
 body .container #middle-left {
@@ -49,7 +66,7 @@ body .container #middle-left {
 
 body .container #middle-right {
   height: 100vh;
-  background-color: brown;
+  background-color: gray;
 }
 
 body .container #bottom-left {
@@ -64,6 +81,23 @@ body .container #bottom-right {
   width: 100%;
   height: 100%;
   overflow: hidden;
+}
+
+body #bottom {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 4 / 1 / 5 / 3;
+  background-color: gray;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 20px;
+}
+
+body #bottom img {
+  width: 50px;
 }
 
 @media only screen and (max-width: 500px) {
@@ -259,7 +293,6 @@ body .container3 #three-bottom {
 }
 
 .main_body {
-  color: white;
   background: url("../docs/dark_city.jpg");
   background-size: 100%;
 }
@@ -271,7 +304,7 @@ body .container3 #three-bottom {
       grid-template-rows: 1fr 1fr;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
-  height: 90vh;
+  height: 100vh;
 }
 
 .main_body .container4 #left-title {
@@ -280,25 +313,34 @@ body .container3 #three-bottom {
   -ms-grid-column: 1;
   -ms-grid-column-span: 1;
   grid-area: 1 / 1 / 2 / 2;
-  color: #e9a848;
-  width: 500px;
-  height: 400px;
-  padding: 0px 20px 0px 20px;
-  margin: 30px 0px 0px 30px;
+  color: #f1b252;
+  width: 480px;
+  height: 390px;
+  padding: 0px 0px 0px 30px;
+  margin: 50px 0px 0px 5vw;
   background-color: rgba(0, 0, 0, 0.61);
-  font-size: 2.5rem;
+}
+
+.main_body .container4 #left-title h1 {
+  margin-left: 20px;
+}
+
+.main_body .container4 #left-title h2 {
+  margin-left: 70px;
 }
 
 .main_body .container4 #right-title {
   -ms-grid-row: 1;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
-  grid-area: 1 / 2 / 2 / 2;
-  background-color: rgba(0, 0, 0, 0.61);
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 2 / 2 / 3;
+  background-color: rgba(0, 0, 0, 0.4);
   height: 150px;
+  grid-gap: 20px;
   padding: 10px;
-  -ms-flex-item-align: center;
-      align-self: center;
+  -ms-flex-item-align: end;
+      align-self: end;
   width: 510px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -308,71 +350,60 @@ body .container3 #three-bottom {
           justify-content: space-between;
 }
 
-.main_body .container4 #right-title #bottom-right-title {
+.main_body .container4 #right-title img {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.main_body .container4 #right-title img:hover, .main_body .container4 #right-title img:active {
+  opacity: 0;
+}
+
+.main_body .container4 #right-title #img1-title {
+  border-radius: 50%;
+  height: 145px;
+  color: black;
+  background-image: url(../docs/left_shot.JPG);
+  background-size: cover;
+}
+
+.main_body .container4 #right-title #img2-title {
+  border-radius: 50%;
+  height: 145px;
+  background-image: url(../docs/center_shot.JPG);
+  background-size: cover;
+}
+
+.main_body .container4 #right-title #img3-title {
+  border-radius: 50%;
+  height: 145px;
+  background-image: url(../docs/right_shot.JPG);
+  background-size: cover;
+}
+
+.main_body .container4 #bottom-right-title {
   -ms-grid-row: 2;
   -ms-grid-row-span: 1;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-area: 2 / 2 / 3 / 3;
-  height: 100px;
+  height: 65px;
   padding: 10px;
-  width: 500px;
-}
-
-.main_body .container4 #right-title img {
-  border-radius: 50%;
-}
-
-.main_body .container4 #right-title #bottom-right-title {
-  background: blue;
-}
-
-.main_body .container4 #right-title #bottom-left-title {
-  background: green;
-}
-
-.main_body .container4 #right-title img:hover {
-  opacity: 0;
-}
-
-.main_body .container4 #right-title img:active {
-  opacity: 0;
-}
-
-.main_body .container4 #right-title #img1-title {
-  background-color: black;
-  border-radius: 50%;
-  background-image: url(../docs/empire-state.jpg);
-}
-
-.main_body .container4 #right-title #img2-title {
-  border-radius: 50%;
-  background-image: url(../docs/empire-state.jpg);
-}
-
-.main_body .container4 #right-title #img3-title {
-  border-radius: 50%;
-  background-image: url(../docs/empire-state.jpg);
+  width: 210px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 10px;
+  background: rgba(241, 177, 82, 0.61);
 }
 
 @media only screen and (min-width: 761px) and (max-width: 1200px) {
-  .main_body .container4 #left-title {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-area: 1 / 1 / 2 / 2;
-  }
   .main_body .container4 #right-title {
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 2;
-    -ms-grid-column-span: 1;
-    grid-area: 1 / 2 / 2 / 3;
-    margin-bottom: -10vh;
     margin-top: 20px;
     margin-left: 5vw;
-    grid-gap: 20px;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -382,12 +413,21 @@ body .container3 #three-bottom {
     display: grid;
         grid-template-areas: 150px 150px 150px / 1fr;
   }
+  .main_body .container4 #right-title #img1-title {
+    background-image: url(../docs/top_shot.JPG);
+  }
+  .main_body .container4 #right-title #img3-title {
+    background-image: url(../docs/bottom_shot.JPG);
+  }
   .main_body .container4 #bottom-right-title {
     -ms-grid-row: 2;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
     -ms-grid-column-span: 1;
     grid-area: 2 / 1 / 3 / 2;
+    -ms-grid-column-align: center;
+        justify-self: center;
+    margin-top: -50px;
   }
 }
 
@@ -398,11 +438,9 @@ body .container3 #three-bottom {
     margin: 0;
     padding: 0;
     width: 100vw;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-area: 1 / 1 / 2 / 2;
+  }
+  .main_body .container4 #left-title h1, .main_body .container4 #left-title h2 {
+    margin-left: 0;
   }
   .main_body .container4 #right-title {
     -ms-grid-row: 2;
@@ -411,12 +449,11 @@ body .container3 #three-bottom {
     -ms-grid-column-span: 1;
     grid-area: 2 / 1 / 3 / 2;
     margin: 0;
-    grid-gap: 20px;
     height: auto;
     width: 100vw;
-    -webkit-box-align: space-between;
-        -ms-flex-align: space-between;
-            align-items: space-between;
+    -webkit-box-align: space-around;
+        -ms-flex-align: space-around;
+            align-items: space-around;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
@@ -424,9 +461,59 @@ body .container3 #three-bottom {
     display: grid;
         grid-template-areas: 150px  150px 150px / 1fr;
   }
-  .main_body .container4 #bottom-right-title {
-    -ms-grid-row: 1000;
-        grid-row-start: 1000;
+  .main_body .container4 #right-title #img1-title {
+    background-image: url(../docs/top_shot.JPG);
   }
+  .main_body .container4 #right-title #img3-title {
+    background-image: url(../docs/bottom_shot.JPG);
+  }
+  .main_body .container4 #bottom-right-title {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+    width: 100vw;
+    margin: 0;
+  }
+}
+
+.container5 {
+  background: url(../docs/dark_city.jpg);
+  background-size: cover;
+  height: 100%;
+  color: red;
+}
+
+.container5 #bio-overlay {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1fr 3fr;
+      grid-template-columns: 0.5fr 1fr 3fr;
+  -ms-grid-rows: 70vh;
+      grid-template-rows: 70vh;
+  height: 100vh;
+  padding: 100px 100px 0px 100px;
+}
+
+.container5 #bio-overlay #bio-column-1 {
+  background: gray;
+}
+
+.container5 #bio-overlay #bio-column-2 {
+  background: gray;
+}
+
+.container5 #bio-overlay #bio-column-2 img {
+  height: 90vh;
+  margin-top: -5vh;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.39);
+  -webkit-filter: grayscale(50%);
+          filter: grayscale(50%);
+}
+
+.container5 #bio-overlay #bio-column-3 {
+  background: gray;
 }
 /*# sourceMappingURL=alt2.css.map */
