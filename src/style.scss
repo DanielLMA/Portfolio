@@ -8,7 +8,7 @@ body {
 
 // TO CREATE LUMINOSITY FOR NON-MAIN PAGES
 @mixin background_luminosity {
-  background-color: rgba(255, 166, 0, 0.3);
+  background-color: rgba(0, 128, 0, 0.151);
   background-blend-mode: luminosity;
 }
 // SPECS FOR CIRCLE ICONS AT TOP OF NON-MAIN PAGES
@@ -16,7 +16,7 @@ body {
   padding: $padding;
   margin-bottom: 10px;
   background: black;
-  color: orange;
+  color: green;
   font-size: 3rem;
   align-self: center;
   justify-self: center;
@@ -95,7 +95,7 @@ footer {
     display: block;
   }
   &:hover .dropbtn {
-    background-color: orange;
+    background-color:green;
   }
   .dropbtn {
     background-color: black;
@@ -128,7 +128,6 @@ footer {
     }
   }
 }
-
 
 
 //! TITLE PAGE
@@ -200,7 +199,7 @@ body {
       margin: 10px;
       display: flex;
       justify-content: space-around;
-      background: rgba(241, 177, 82, 0.6);
+      background: rgba(95, 241, 82, 0.6);
     }
   }
 }
@@ -301,7 +300,7 @@ body {
   // EXCERPTS FROM BLOG POSTS THAT POP OUT WHEN HOVER OVER
   .blog-body {
     background: rgba(0, 0, 0, 0.8);
-    color: orange;
+    color: green;
     padding: 0px 30px 10px 30px;
     margin-bottom: 25px;
     font-size: 1.5rem;
@@ -352,7 +351,7 @@ body {
     }
     // MIDDLE ORANGE BUFFER BOX
     .orange_box {
-      background: rgba(255, 166, 0, 0.5);
+      background: green;
       border-radius: 5%;
       z-index: 10;
     }
@@ -454,7 +453,7 @@ body {
           box-shadow: $biopageshadow;
           // LINK TO RESUME 
           #resume-link {
-            background-color: rgb(199, 129, 0);
+            background-color: green;
           }
           span {
             color: white;
