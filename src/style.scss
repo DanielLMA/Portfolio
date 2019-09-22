@@ -1,0 +1,533 @@
+// MAIN BACKGROUND IMAGE USED THROUGHOUT, with font
+body {
+  background-image: url(../docs/dark_city.jpg);
+  background-size: 100%;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+// TO CREATE LUMINOSITY FOR NON-MAIN PAGES
+@mixin background_luminosity {
+  background-color: rgba(255, 166, 0, 0.3);
+  background-blend-mode: luminosity;
+}
+// SPECS FOR CIRCLE ICONS AT TOP OF NON-MAIN PAGES
+@mixin top_icon_specs($padding: 0px 0px 0px 0px) {
+  padding: $padding;
+  margin-bottom: 10px;
+  background: black;
+  color: orange;
+  font-size: 3rem;
+  align-self: center;
+  justify-self: center;
+  border-radius: 50%;
+  transition: transform 1s;
+  &:hover {
+    transform: rotate(360deg);
+  }
+}
+// ICON BOX ON 'ETC' PAGE
+@mixin icon_box {
+  background-size: 200px;
+  border-radius: 5%;
+  img:hover {
+    transform: translate(230px, 0px);
+    transition: 1s ease-out;
+  }
+  img {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+  }
+}
+
+// hover background images used on the front page. Circle head-shots. 
+@mixin hover_img {
+  border-radius: 50%;
+  height: 150px;
+  background-size: cover;
+}
+
+// used to cancel out margins and make wide, for responsiveness
+@mixin margin_cancel_width_full {
+margin: 0;
+width: 100vw;
+}
+
+// General orange hue used in theme
+$orangish: rgb(224, 180, 84);
+// black see through background, front-page
+$blackveil: rgba(0, 0, 0, 0.6);
+$biopagecolor: rgb(170, 170, 170);
+$biopageshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5),
+0 6px 20px 0 rgba(0, 0, 0, 0.39);
+h1 {
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+// remove underlining and blue used link
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(128, 128, 128, 0.9);
+  padding: 10px;
+  #copyright {
+    align-self: flex-end;
+  }
+}
+
+//! NAV BAR - HAMBURGER ICON
+.dropdown {
+  position: absolute;
+  right: 0;
+  margin: 15px;
+  display: inline-block;
+  &:hover .dropdown-content {
+    display: block;
+  }
+  &:hover .dropbtn {
+    background-color: orange;
+  }
+  .dropbtn {
+    background-color: black;
+    border-radius: 20%;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    font-size: 2rem;
+    border: none;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 1.0);
+    color: white;
+    min-width: 160px;
+    right: 0px;
+    font-size: 1.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    a:hover {
+      background-color: rgb(255, 166, 0);
+      color: black;
+    }
+    a {
+      color: orange;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    
+    }
+  }
+}
+
+
+
+//! TITLE PAGE
+body {
+  .title_page_grid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    height: 90vh;
+    // BOX WITH MAIN DETAILS ON THE RIGHT SIDE OF PAGE
+    #title_box{
+      grid-area: 1 / 1;
+      color: $orangish;
+      width: 480px;
+      height: 390px;
+      padding: 0px 0px 0px 30px;
+      margin: 50px 0px 0px 5vw;
+      background-color: $blackveil;
+      h1 {
+        margin-left: 20px;
+      }
+      h2 {
+        margin-left: 70px;
+      }
+    }
+    // ICONS WITH LINKS AND BACKGROUND HEAD SHOTS
+    #three_icons {
+      grid-area: 1 / 2 / 2 / 3;
+      background-color: $blackveil;
+      height: 150px;
+      width: 510px;
+      grid-gap: 20px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-self: end;
+      img {
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+        // FUNCTION TO MAKE BACKGROUND HEAD SHOTS APPEAR
+        &:hover {
+          opacity: 0;
+        }
+        &:active {
+          opacity: 1;
+        }
+      }
+      // THREE HEADSHOTS
+      #hover_img_1 {
+        @include hover_img;
+        background-image: url(../docs/left_shot.JPG);
+      }
+      #hover_img_2{
+        @include hover_img;
+        background-image: url(../docs/center_shot.JPG);
+      }
+      #hover_img_3{
+        @include hover_img;
+        background-image: url(../docs/right_shot.JPG);
+      }
+    }
+    // SOCIAL MEDIA BAR WITH TWITTER, GITHUB, AND LINKEDIN LINKS
+    #social_media_bar {
+      grid-area: 2 / 2 / 3 / 3;
+      height: 65px;
+      width: 210px;
+      padding: 10px;
+      margin: 10px;
+      display: flex;
+      justify-content: space-around;
+      background: rgba(241, 177, 82, 0.6);
+    }
+  }
+}
+//! TITLE PAGE RESONSIVENESS
+@media only screen and (min-width: 851px) and (max-width: 1200px) {
+  body {
+    .title_page_grid{
+      #three_icons{
+        margin: 20px 0 0 5vw;
+        height: 510px;
+        width: 150px;
+        display: grid;
+        grid-template-areas:
+          150px
+          150px
+          150px
+          / 1fr;
+        align-items: center;
+        #hover_img_1 {
+          background-image: url(../docs/top_shot.JPG);
+        }
+        #hover_img_3 {
+          background-image: url(../docs/bottom_shot.JPG);
+        }
+      }
+      #social_media_bar{
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: center;
+        margin-top: -50px;
+      }
+    }
+  }
+}
+
+
+//! TITLE PAGE RESONSIVENESS
+@media only screen and (max-width: 850px) {
+  body {
+    .title_page_grid {
+      #title_box {
+        @include margin_cancel_width_full;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+        padding: 0; 
+        h1,
+        h2 {
+          margin-left: 0;
+        }
+      }
+      #three_icons {
+        @include margin_cancel_width_full;
+        grid-area: 2 / 1 / 3 / 2;
+        height: auto;
+        display: grid;
+        grid-template-areas:
+          150px
+          150px
+          150px
+          / 1fr;
+        align-items: space-around;
+        justify-content: center;
+        #hover_img_1 {
+          background-image: url(../docs/top_shot.JPG);
+        }
+        #hover_img_3 {
+          background-image: url(../docs/bottom_shot.JPG);
+        }
+      }
+      #social_media_bar {
+        @include margin_cancel_width_full;
+        grid-area: 3 / 1 / 4 / 2;
+      }
+    }
+  }
+}
+
+
+//! MAIN BLOG PAGE
+body {
+  @include background_luminosity;
+  // MAIN GRID FOR PAGE CONTENT
+  .blog_grid_container {
+    display: grid;
+    grid-template-areas:
+      150px
+      5px
+      150px
+      repeat(6, auto)
+      / 1fr;
+    justify-content: center;
+    margin: 0px 150px 0px 150px;
+  }
+  // TOP ICON 
+  #blog_icon_section {
+    @include top_icon_specs($padding: 60px 25px 60px 25px);
+    grid-area: 2 / 1;
+  }
+  // EXCERPTS FROM BLOG POSTS THAT POP OUT WHEN HOVER OVER
+  .blog-body {
+    background: rgba(0, 0, 0, 0.8);
+    color: orange;
+    padding: 0px 30px 10px 30px;
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    transition: all 0.2s ease-in-out;
+    p {
+      margin-left: 20px;
+    }
+    &:hover {
+      transform: scale(1.05);
+      a {
+        color: rgb(253, 225, 183);
+      }
+    }
+  }
+}
+// ! MAIN BLOG PAGE RESONSIVENESS
+@media only screen and (max-width: 700px) {
+  body {
+    .blog_grid_container {
+      margin: 0px;
+    }
+  }
+}
+
+
+// ! ETC PAGE
+body {
+  .ETC_grid_container {
+    display: grid;
+    grid-template-rows: 100px 1fr repeat(3, 200px) 100px;
+    grid-template-columns: repeat(3, 200px);
+    padding: 10vh 25vw 0vh 25vw;
+    grid-gap: 30px;
+    justify-content: center;
+    // TOP ICON "ETC"
+    #ETC_icon_section {
+      @include top_icon_specs($padding: 45px 25px 45px 25px);
+      grid-area: 1 / 1 / 2 / 4;
+    }
+    #ETC_title_padding {
+      grid-area: 2 / 1 / 3 / 4;
+      padding: 10px;
+    }
+    // BOX THAT MOVES WITH RUNNER ICON, REVEALS BACKGROUND IMAGE
+    #runner_box {
+      @include icon_box;
+      background-image: url("../docs/running_shot.png");
+    }
+    // MIDDLE ORANGE BUFFER BOX
+    .orange_box {
+      background: rgba(255, 166, 0, 0.5);
+      border-radius: 5%;
+      z-index: 10;
+    }
+    // DESCRIPTOR BOX ON THE SIDE 
+    .ETC_desc_black_box {
+      background: black;
+      border-radius: 5%;
+      color: $orangish;
+      text-align: center;
+      padding: 20px;
+    }
+    // MIDDLE MOVING BOX WITH ICON
+    #code_box{
+      background: url("../docs/coding.jpg");
+      @include icon_box;  
+    }
+    // LOWER MOVING BOX WITH ICON
+    #bike_box{
+      background: url("../docs/bike.jpg");
+      @include icon_box;
+    }
+  }
+}
+
+//! ETC PAGE RESPONSIVENESS
+@media only screen and (max-width: 800px) {
+  body {
+    .ETC_grid_container {
+      // SHRINKING TO FIT IN RESPONSIVINESS
+      grid-column-gap: 0px;
+      #runner_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
+      }
+      #code_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
+      }
+      #bike_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
+      }
+    }
+  }
+}
+
+
+//! BIO PAGE
+body {
+  @include background_luminosity;
+  .bio_page {
+    #bio_page_grid {
+      display: grid;
+      grid-template-columns: 10% 1fr 3fr;
+      grid-template-rows: minmax(450px, 70vh);
+      height: 100vh;
+      padding: 75px 100px 0px 5vw;
+      #bio-column-1 {
+        background: $biopagecolor;
+      }
+      // (LEFT)MIDDLE BOX HOLDING PICTURE
+      #bio-column-2 {
+        background: $biopagecolor;
+        img {
+          height: 80vh;
+          min-height: 470px;
+          margin-top: -5vh;
+          box-shadow: $biopageshadow;
+          filter: grayscale(20%);
+        }
+        // surest way of removing the text until needed in responsiveness
+        h2 {
+          margin-left: -1000px;
+        }
+      }
+      // RIGHT BOX CONTAINING SKILLS CARD
+      #bio-column-3 {
+        background: $biopagecolor;
+        min-width: 425px;
+        max-width: 650px;
+        display: grid;
+        grid-template-areas:
+          1fr
+          1fr
+          1fr
+          / 1fr;
+        #skills {
+          background: rgb(241, 241, 241);
+          min-width: 300px;
+          min-height: 200px;
+          padding: 25px 10px 35px 10px;
+          margin: 50px;
+          align-self: center;
+          justify-self: center;
+          text-align: center;
+          box-shadow: $biopageshadow;
+          // LINK TO RESUME 
+          #resume-link {
+            background-color: rgb(199, 129, 0);
+          }
+          span {
+            color: white;
+            background-color: rgb(44, 44, 44);
+            padding: 3px;
+            border: solid 2px black;
+          }
+        }
+        // SOCIAL MEDIA LINKS 
+        #bio_social_links {
+          display: grid;
+          grid-template-rows: 3fr 1fr;
+          justify-self: center;
+          align-self: center;
+          margin-bottom: 20px;
+          #head_shot {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+//! BIO PAGE RESPONSIVENESS
+@media only screen and (max-width: 950px) {
+  body {
+    .bio_page {
+      // RESIZING AND SHAPING BOXES TO FIT THINNER FRAME
+      #bio_page_grid {
+        padding: 0 0 0 0;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        #bio-column-1 {
+          background: transparent;
+        }
+        #bio-column-3 {
+          grid-area: 2 / 1 / 3 / 2;
+          justify-self: center;
+          height: 750px;
+          margin-bottom: 30px;
+          #skills {
+            align-self: start;
+          }
+          #bio_social_links {
+            #head_shot {
+              display: contents;
+              img {
+                height: 150px;
+                width: 150px;
+                justify-self: center;
+                border-radius: 50%;
+                box-shadow: $biopageshadow;
+              }
+            }
+          }
+        }
+        #bio-column-2 {
+          // BIO COLUMN TWO BECOMES "BIO" ICON
+          @include top_icon_specs(20px 40px 20px 40px);
+          grid-area: 1 / 1 / 2 / 2;
+          transition: transform 1s;
+          &:hover {
+            transform: rotate(360deg);
+          }
+          img {
+            margin-top: 0;
+            display: none;
+          }
+          h2 {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
