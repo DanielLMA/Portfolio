@@ -4,13 +4,15 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+// TO CREATE LUMINOSITY FOR NON-MAIN PAGES
 @mixin background_luminosity {
   background-color: rgba(255, 166, 0, 0.3);
   background-blend-mode: luminosity;
 }
-
+// SPECS FOR CIRCLE ICONS AT TOP OF NON-MAIN PAGES
 @mixin top_icon_specs($padding: 0px 0px 0px 0px) {
   padding: $padding;
+  margin-bottom: 10px;
   background: black;
   color: orange;
   font-size: 3rem;
@@ -22,17 +24,47 @@ body {
     transform: rotate(360deg);
   }
 }
+// ICON BOX ON 'ETC' PAGE
+@mixin icon_box {
+  background-size: 200px;
+  border-radius: 5%;
+  img:hover {
+    transform: translate(230px, 0px);
+    transition: 1s ease-out;
+  }
+  img {
+    height: 200px;
+    width: 200px;
+    border-radius: 5%;
+  }
+}
 
+@mixin hover_img {
+  border-radius: 50%;
+  height: 150px;
+  background-size: cover;
+}
+
+@mixin margin_cancel_width_full {
+margin: 0;
+width: 100vw;
+}
+
+$orangish: rgb(224, 180, 84);
+$blackveil: rgba(0, 0, 0, 0.6);
 h1 {
   font-size: 4.5rem;
 }
+
 h2 {
   font-size: 2rem;
 }
+
 a {
   text-decoration: none;
   color: inherit;
 }
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -44,8 +76,54 @@ footer {
   }
 }
 
-//! MAIN BLOG PAGE
+//! NAV BAR - HAMBURGER ICON
+.dropdown {
+  position: absolute;
+  right: 0;
+  margin: 15px;
+  display: inline-block;
+  &:hover .dropdown-content {
+    display: block;
+  }
+  &:hover .dropbtn {
+    background-color: orange;
+  }
+  .dropbtn {
+    background-color: black;
+    border-radius: 20%;
+    color: white;
+    padding: 10px 15px 10px 15px;
+    font-size: 2rem;
+    border: none;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    min-width: 160px;
+    right: 0px;
+    font-size: 1.5rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    a:hover {
+      background-color: rgb(255, 166, 0);
+      color: black;
+    }
+    a {
+      color: orange;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    
+    }
+  }
+}
 
+
+
+
+//! MAIN BLOG PAGE
 body {
   @include background_luminosity;
   .blog_grid_container {
@@ -56,7 +134,6 @@ body {
       150px
       repeat(6, auto)
       / 1fr;
-    grid-row-gap: 25px;
     justify-content: center;
     margin: 0px 150px 0px 150px;
   }
@@ -69,6 +146,7 @@ body {
     background: rgba(0, 0, 0, 0.8);
     color: orange;
     padding: 0px 30px 10px 30px;
+    margin-bottom: 25px;
     font-size: 1.5rem;
     transition: all 0.2s ease-in-out;
     p {
@@ -83,6 +161,7 @@ body {
   }
 }
 
+// ! MAIN BLOG PAGE RESONSIVENESS
 @media only screen and (max-width: 700px) {
   body {
     .blog_grid_container {
@@ -91,224 +170,90 @@ body {
   }
 }
 
-.main_body2 {
-  .container2 {
-    justify-content: center;
-    height: 100%;
+// ! ETC PAGE
+body {
+  .ETC_grid_container {
     display: grid;
-    grid-template-rows: 100px 1fr 200px 200px 200px 100px;
-    grid-template-columns: 200px 200px 200px;
-    padding: 10vh 25vw 10vh 25vw;
+    grid-template-rows: 100px 1fr repeat(3, 200px) 100px;
+    grid-template-columns: repeat(3, 200px);
+    padding: 10vh 25vw 0vh 25vw;
     grid-gap: 30px;
-    color: black;
-
-    #two-head {
+    justify-content: center;
+    #ETC_icon_section {
+      @include top_icon_specs($padding: 45px 25px 45px 25px);
       grid-area: 1 / 1 / 2 / 4;
-      background: black;
-      color: orange;
-      font-size: 4rem;
-      align-self: center;
-      justify-self: center;
-      padding: 45px 25px 45px 25px;
-      border-radius: 50%;
-      transition: transform 1s;
-      &:hover {
-        transform: rotate(360deg);
-      }
     }
-    #two-top {
+    #ETC_title_padding {
       grid-area: 2 / 1 / 3 / 4;
       padding: 10px;
     }
-    #two-upper-left {
+    #runner_box {
+      @include icon_box;
       background-image: url("../docs/running_shot.png");
-      background-size: 200px;
-      font-size: 1rem;
-      border-radius: 5%;
-      -webkit-backface-visibility: hidden;
-      img:hover {
-        transform: translate(230px, 0px);
-        transition: 1s ease-out;
-      }
-      img {
-        height: 200px;
-        width: 200px;
-        border-radius: 5%;
-      }
     }
-    #two-upper-middle {
+    .orange_box {
       background: rgba(255, 166, 0, 0.5);
       border-radius: 5%;
       z-index: 10;
     }
-    #two-upper-right {
+    .ETC_desc_black_box {
       background: black;
       border-radius: 5%;
-      color: rgb(224, 180, 84);
+      color: $orangish;
       text-align: center;
       padding: 20px;
     }
-    #two-middle-left {
+    #code_box{
       background: url("../docs/coding.jpg");
-      background-size: 200px;
-      border-radius: 5%;
-      img:hover {
-        transform: translate(230px, 0px);
-        transition: 1s ease-out;
-      }
-      img {
-        height: 200px;
-        width: 200px;
-        border-radius: 5%;
-      }
+      @include icon_box;  
     }
-    #two-middle-middle {
-      background-color: rgba(255, 166, 0, 0.5);
-      z-index: 10;
-      border-radius: 5%;
-    }
-    #two-middle-right {
-      background-color: black;
-      color: rgb(224, 180, 84);
-      border-radius: 5%;
-      text-align: center;
-      padding: 20px;
-    }
-    #two-lower-left {
+    #bike_box{
       background: url("../docs/bike.jpg");
-      background-size: 200px;
-      border-radius: 5%;
-      img:hover {
-        transform: translate(230px, 0px);
-        transition: 1s ease-out;
-      }
-      img {
-        height: 200px;
-        width: 200px;
-        border-radius: 5%;
-      }
-    }
-    #two-lower-middle {
-      background-color: rgba(255, 166, 0, 0.5);
-      z-index: 10;
-      border-radius: 5%;
-    }
-    #two-lower-right {
-      background-color: black;
-      color: rgb(224, 180, 84);
-      border-radius: 5%;
-      padding: 20px;
-    }
-    //  #bottom {
-    //    background-color: gray;
-    //    grid-area: 6 / 1 / 7 / 4;
-    //  }
-  }
-
-  body {
-    background: rgb(192, 192, 192);
-    font-family: "Montserrat", sans-serif;
-    .container3 {
-      background: url("../docs/QC_marathon.jpg");
-      background-size: cover;
-      max-width: 1000px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 40% 60%;
-      grid-template-rows: 1fr 1fr 1fr;
-
-      #three-top {
-        grid-area: 1 / 1 / 2 / 2;
-        width: 30vw;
-        // min-width: 500px;
-        font-size: 2rem;
-        height: 125px;
-        margin: 125px 25px 50px 50px;
-        z-index: 10;
-        background: lightblue;
-      }
-
-      #three-middle {
-        grid-area: 2 / 1 / 3 / 2;
-        height: 500px;
-        background: blue;
-      }
-
-      #three-bottom {
-        grid-area: 3 / 1 / 4 / 2;
-        background: green;
-      }
-      // #bottom {
-      //   grid-area: 4 / 1 / 5 / 3;
-      //   background-color: lightblue;
-      // }
+      @include icon_box;
     }
   }
 }
 
+//! ETC PAGE RESPONSIVENESS
 @media only screen and (max-width: 800px) {
-  .main_body2 {
-    .container2 {
-      display: grid;
-      grid-column-gap: 0px;
-      #two-upper-left {
-        img:hover {
-          transform: translate(200px, 0px);
-        }
-      }
-      #two-middle-left {
-        img:hover {
-          transform: translate(200px, 0px);
-        }
-      }
-      #two-lower-left {
-        img:hover {
-          transform: translate(200px, 0px);
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (max-width: 500px) {
   body {
-    .container3 {
-      #three-top {
-        margin: 0;
-        width: 100vw;
-        height: auto;
+    .ETC_grid_container {
+      grid-column-gap: 0px;
+      #runner_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
       }
-      #three-top {
-        width: 100vw;
+      #code_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
       }
-      #three-middle {
-        width: 100vw;
-      }
-      #three-bottom {
-        width: 100vw;
+      #bike_box {
+        img:hover {
+          transform: translate(200px, 0px);
+        }
       }
     }
   }
 }
 
-//? TITLE PAGE
-.main_body {
-  background: url("../docs/dark_city.jpg");
-  background-size: 100%;
-  .container4 {
+//! TITLE PAGE
+body {
+
+  .title_page_grid {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    height: 100vh;
-    //? left title box
-    #left-title {
-      grid-area: 1 / 1 / 2 / 2;
-      color: rgb(241, 178, 82);
+    height: 90vh;
+    #title_box{
+      grid-area: 1 / 1;
+      color: $orangish;
       width: 480px;
       height: 390px;
       padding: 0px 0px 0px 30px;
       margin: 50px 0px 0px 5vw;
-      background-color: rgba(0, 0, 0, 0.61);
+      background-color: $blackveil;
       h1 {
         margin-left: 20px;
       }
@@ -316,67 +261,59 @@ body {
         margin-left: 70px;
       }
     }
-    //? 3 page links
-    #right-title {
+    #three_icons {
       grid-area: 1 / 2 / 2 / 3;
-      background-color: rgba(0, 0, 0, 0.4);
+      background-color: $blackveil;
       height: 150px;
+      width: 510px;
       grid-gap: 20px;
       padding: 10px;
-      align-self: end;
-      width: 510px;
       display: flex;
       justify-content: space-between;
+      align-self: end;
       img {
         border-radius: 50%;
         height: 150px;
         width: 150px;
-        // needed to use "opacity: 0" as "display: none" was glitchy
+        &:hover {
+          opacity: 0;
+        }
+        &:active {
+          opacity: 1;
+        }
       }
-      img:hover,
-      img:active {
-        opacity: 0;
-      }
-      #img1-title {
-        border-radius: 50%;
-        height: 150px;
+      #hover_img_1 {
+        @include hover_img;
         background-image: url(../docs/left_shot.JPG);
-        background-size: cover;
       }
-      #img2-title {
-        border-radius: 50%;
-        height: 150px;
+      #hover_img_2{
+        @include hover_img;
         background-image: url(../docs/center_shot.JPG);
-        background-size: cover;
       }
-      #img3-title {
-        border-radius: 50%;
-        height: 150px;
+      #hover_img_3{
+        @include hover_img;
         background-image: url(../docs/right_shot.JPG);
-        background-size: cover;
       }
     }
-    //? social media bar
-    #bottom-right-title {
+    
+    #social_media_bar {
       grid-area: 2 / 2 / 3 / 3;
       height: 65px;
-      padding: 10px;
       width: 210px;
+      padding: 10px;
+      margin: 10px;
       display: flex;
       justify-content: space-around;
-      margin: 10px;
-      background: rgba(241, 177, 82, 0.61);
+      background: rgba(241, 177, 82, 0.6);
     }
   }
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1200px) {
-  .main_body {
-    .container4 {
-      #right-title {
-        margin-top: 20px;
-        margin-left: 5vw;
-        align-items: center;
+  body {
+    .title_page_grid{
+      #three_icons{
+        margin: 20px 0 0 5vw;
         height: 510px;
         width: 150px;
         display: grid;
@@ -385,14 +322,15 @@ body {
           150px
           150px
           / 1fr;
-        #img1-title {
+        align-items: center;
+        #hover_img_1 {
           background-image: url(../docs/top_shot.JPG);
         }
-        #img3-title {
+        #hover_img_3 {
           background-image: url(../docs/bottom_shot.JPG);
         }
       }
-      #bottom-right-title {
+      #social_media_bar{
         grid-area: 2 / 1 / 3 / 2;
         justify-self: center;
         margin-top: -50px;
@@ -401,53 +339,53 @@ body {
   }
 }
 
+//! TITLE PAGE RESONSIVENESS
 @media only screen and (max-width: 850px) {
-  .main_body {
-    .container4 {
+  body {
+    .title_page_grid {
       .dropbtn {
         display: none;
       }
-      #left-title {
+      #title_box {
+        @include margin_cancel_width_full;
         background: rgba(0, 0, 0, 0.8);
         text-align: center;
-        margin: 0;
-        padding: 0;
-        width: 100vw;
+        padding: 0; 
         h1,
         h2 {
           margin-left: 0;
         }
       }
-      #right-title {
+      #three_icons {
+        @include margin_cancel_width_full;
         grid-area: 2 / 1 / 3 / 2;
-        margin: 0;
         height: auto;
-        width: 100vw;
-        align-items: space-around;
-        justify-content: center;
         display: grid;
         grid-template-areas:
           150px
           150px
           150px
           / 1fr;
-        #img1-title {
+        align-items: space-around;
+        justify-content: center;
+        #hover_img_1 {
           background-image: url(../docs/top_shot.JPG);
         }
-        #img3-title {
+        #hover_img_3 {
           background-image: url(../docs/bottom_shot.JPG);
         }
       }
-      #bottom-right-title {
+      #social_media_bar {
+        @include margin_cancel_width_full;
         grid-area: 3 / 1 / 4 / 2;
-        width: 100vw;
-        margin: 0;
       }
     }
   }
 }
 
-.main_body2 {
+
+//! BIO PAGE
+body {
   background: url("../docs/dark_city.jpg");
   @include background_luminosity;
   background-size: cover;
@@ -523,7 +461,7 @@ body {
 }
 
 @media only screen and (max-width: 950px) {
-  .main_body2 {
+  body {
     .container5 {
       #bio-overlay {
         height: 100px;
@@ -582,6 +520,22 @@ body {
     }
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // #two-upper-middle{
 //                 margin: 100px 0 0 0;
@@ -708,50 +662,7 @@ body {
 
 // }
 
-.dropdown {
-  position: absolute;
-  right: 0;
-  margin: 15px;
-  display: inline-block;
-  &:hover .dropdown-content {
-    display: block;
-  }
-  &:hover .dropbtn {
-    background-color: orange;
-  }
 
-  .dropbtn {
-    background-color: black;
-    border-radius: 20%;
-    color: white;
-    padding: 10px 15px 10px 15px;
-    font-size: 2rem;
-    border: none;
-  }
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.9);
-    color: white;
-    min-width: 160px;
-    right: 0px;
-    font-size: 1.5rem;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-    a:hover {
-      background-color: rgb(255, 166, 0);
-      color: black;
-    }
-
-    a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      color: orange;
-    }
-  }
-}
 
 // page 2 before transformation
 // .container2 {
@@ -972,6 +883,63 @@ body {
 //       }
 //       #bottom img {
 //         width: 33px;
+//       }
+//     }
+//   }
+// }
+
+// body {
+//   background: rgb(192, 192, 192);
+//   font-family: "Montserrat", sans-serif;
+//   .container3 {
+//     background: url("../docs/QC_marathon.jpg");
+//     background-size: cover;
+//     max-width: 1000px;
+//     margin: auto;
+//     display: grid;
+//     grid-template-columns: 40% 60%;
+//     grid-template-rows: 1fr 1fr 1fr;
+
+//     #three-top {
+//       grid-area: 1 / 1 / 2 / 2;
+//       width: 30vw;
+//       // min-width: 500px;
+//       font-size: 2rem;
+//       height: 125px;
+//       margin: 125px 25px 50px 50px;
+//       z-index: 10;
+//       background: lightblue;
+//     }
+
+//     #three-middle {
+//       grid-area: 2 / 1 / 3 / 2;
+//       height: 500px;
+//       background: blue;
+//     }
+
+//     #three-bottom {
+//       grid-area: 3 / 1 / 4 / 2;
+//       background: green;
+//     }
+//   }
+// }
+
+// @media only screen and (max-width: 500px) {
+//   body {
+//     .container3 {
+//       #three-top {
+//         margin: 0;
+//         width: 100vw;
+//         height: auto;
+//       }
+//       #three-top {
+//         width: 100vw;
+//       }
+//       #three-middle {
+//         width: 100vw;
+//       }
+//       #three-bottom {
+//         width: 100vw;
 //       }
 //     }
 //   }
