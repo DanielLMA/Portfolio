@@ -47,7 +47,7 @@ footer #copyright {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: green;
+  background-color: orange;
 }
 
 .dropdown .dropbtn {
@@ -185,7 +185,7 @@ body .title_page_grid #social_media_bar {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  background: rgba(95, 241, 82, 0.6);
+  background: rgba(241, 177, 82, 0.6);
 }
 
 @media only screen and (min-width: 851px) and (max-width: 1200px) {
@@ -267,7 +267,7 @@ body .title_page_grid #social_media_bar {
 }
 
 body {
-  background-color: rgba(0, 128, 0, 0.151);
+  background-color: rgba(255, 166, 0, 0.3);
   background-blend-mode: luminosity;
 }
 
@@ -285,7 +285,7 @@ body #blog_icon_section {
   padding: 60px 25px 60px 25px;
   margin-bottom: 10px;
   background: black;
-  color: green;
+  color: orange;
   font-size: 3rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -309,7 +309,7 @@ body #blog_icon_section:hover {
 
 body .blog-body {
   background: rgba(0, 0, 0, 0.8);
-  color: green;
+  color: orange;
   padding: 0px 30px 10px 30px;
   margin-bottom: 25px;
   font-size: 1.5rem;
@@ -354,7 +354,7 @@ body .ETC_grid_container #ETC_icon_section {
   padding: 45px 25px 45px 25px;
   margin-bottom: 10px;
   background: black;
-  color: green;
+  color: orange;
   font-size: 3rem;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -407,7 +407,7 @@ body .ETC_grid_container #runner_box img {
 }
 
 body .ETC_grid_container .orange_box {
-  background: green;
+  background: rgba(255, 166, 0, 0.5);
   border-radius: 5%;
   z-index: 10;
 }
@@ -477,7 +477,7 @@ body .ETC_grid_container #bike_box img {
 }
 
 body {
-  background-color: rgba(0, 128, 0, 0.151);
+  background-color: rgba(255, 166, 0, 0.3);
   background-blend-mode: luminosity;
 }
 
@@ -540,7 +540,7 @@ body .bio_page #bio_page_grid #bio-column-3 #skills {
 }
 
 body .bio_page #bio_page_grid #bio-column-3 #skills #resume-link {
-  background-color: green;
+  background-color: #c78100;
 }
 
 body .bio_page #bio_page_grid #bio-column-3 #skills span {
@@ -609,7 +609,7 @@ body .bio_page #bio_page_grid #bio-column-3 #bio_social_links #head_shot {
     padding: 20px 40px 20px 40px;
     margin-bottom: 10px;
     background: black;
-    color: green;
+    color: orange;
     font-size: 3rem;
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
