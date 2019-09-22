@@ -1,6 +1,6 @@
 ##Portfolio - Daniel Ade
 
-<!--! 1. url to site -->
+URL to my site: https://daniellma.github.io/Portfolio/
 
 2. Github link: https://github.com/DanielLMA/Portfolio
 
