@@ -4,7 +4,7 @@ URL to my site: https://daniellma.github.io/Portfolio/
 
 Github link: https://github.com/DanielLMA/Portfolio
 
-
+![](docs/sitemap.png)
 
 PURPOSE
 
