@@ -4,12 +4,9 @@ URL to my site: https://daniellma.github.io/Portfolio/
 
 Github link: https://github.com/DanielLMA/Portfolio
 
-PURPOSE
 
-Create a means for potential employers or clients to contact me
-Stay connected through social media with potential clients or colleagues
-Exhibit a work history and background which also accentuates my strengths, skills and personality 
-
+The purpose of this site was to create a means for potential employers or clients to contact me. A way to stay connected through social media with potential clients or colleagues.
+Also, it will exhibit a work history and background which also accentuates my strengths, skills and personality. 
 
 ![](docs/sitemap.png)
 
